@@ -1,0 +1,25 @@
+# src/latest_ai_development/config/tasks.yaml
+research_task:
+  description: >
+    Conduct a thorough research about {topic}. Use the following links as your primary source:
+    https://www.moj.gov.ae/ar/laws-and-legislation.aspx
+    https://u.ae/en/information-and-services/
+    https://www.pension.gov.ae/en-us/Pages/PensionLaw.aspx
+    https://uaelegislation.gov.ae/ar/legislations
+    https://www.moec.gov.ae/en/companies-legislations
+    https://dubailawyers.com/blog/legal-aspects-for-non-profit-organization/#:~:text=5%20of%201985%20
+    If no relevant information is found on the link, then search the web for the most recent changes.
+  expected_output: >
+    A list with 5 bullet points of the most relevant information about {topic}. All the sources and their dates have to be listed as well.
+  agent: researcher
+
+reporting_task:
+  description: >
+    Review the context you got and summarize each topic into a full section for a report.
+    Make sure the report is detailed and contains any and all relevant information.
+    Also include the date of the 
+  expected_output: >
+    A fully fledge reports with the mains topics, each with a full section of information, and the link from where the information was retrieved.
+    Formatted as markdown without '```'
+  agent: reporting_analyst
+  output_file: report.md
