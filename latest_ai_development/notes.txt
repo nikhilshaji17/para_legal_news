@@ -1,1 +1,5 @@
+pip install gradio
+pip install sambanova_gradio
+
 export PYTHONPATH=/home/goha/para_legal_news/latest_ai_development/src:$PYTHONPATH
+

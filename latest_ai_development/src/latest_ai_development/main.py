@@ -12,9 +12,9 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # crew locally, so refrain from adding unnecessary logic into this file.
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
-topic = input("Enter the topic you want news on:")
+# topic = input("Enter the topic you want news on:")
 
-def run():
+def run(topic):
     """
     Run the crew.
     """
@@ -65,26 +65,26 @@ def test():
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")
 	
-def run_search_task(topic):
-    """
-    Run the research task using the provided topic.
-    """
-    try:
-        # Create an instance of the crew and invoke the research task
-        crew_instance = LatestAiDevelopmentCrew()
-        inputs = {
-            'topic': topic,
-            'current_year': str(datetime.now().year)
-        }
-        # Trigger the task
-        crew_instance.before_kickoff_function(inputs)
-        result = crew_instance.research_task()  # Assuming this triggers the actual task
-        crew_instance.after_kickoff_function(result)
-        return result
-    except Exception as e:
-        raise Exception(f"An error occurred while running the search task: {e}")
+# def run_search_task(topic):
+#     """
+#     Run the research task using the provided topic.
+#     """
+#     try:
+#         # Create an instance of the crew and invoke the research task
+#         crew_instance = LatestAiDevelopmentCrew()
+#         inputs = {
+#             'topic': topic,
+#             'current_year': str(datetime.now().year)
+#         }
+#         # Trigger the task
+#         crew_instance.before_kickoff_function(inputs)
+#         result = crew_instance.research_task()  # Assuming this triggers the actual task
+#         crew_instance.after_kickoff_function(result)
+#         return result
+#     except Exception as e:
+#         raise Exception(f"An error occurred while running the search task: {e}")
 
-# Optionally, include a block to allow running from command line
-if __name__ == "__main__":
-    topic = input("Enter the topic you want news on:")
-    run_search_task(topic)
+# # Optionally, include a block to allow running from command line
+# if __name__ == "__main__":
+#     topic = input("Enter the topic you want news on:")
+#     run_search_task(topic)
